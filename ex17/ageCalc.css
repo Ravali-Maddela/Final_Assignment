@@ -1,0 +1,32 @@
+.container{
+    margin: 2rem ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    width: 500px;
+    border: 1px solid black;
+    padding: 1rem;
+    margin: 1rem;
+}
+.form-group{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+}
+input[type='date']{
+    width: 60%;
+}
+.showAge{
+    width: 500px;
+    height: 60px;
+    border: 1px solid black;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 20px;
+}

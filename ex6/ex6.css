@@ -1,0 +1,100 @@
+.container {
+  width: 800px;
+  height: 800px;
+  box-shadow: 2px 2px 5px gray;
+  padding: 1rem;
+  margin: 5rem auto;
+}
+.orange {
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+.orange-child {
+  background-color: orange;
+  width: 49.5%;
+}
+.green {
+  height: 40%;
+  width: 100%;
+  background-color: yellowgreen;
+  margin-top: 2%;
+}
+.blue {
+  height: 25%;
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-between;
+}
+.blue-child {
+  width: 32.5%;
+  background-color: blue;
+}
+.grey {
+  height: 15%;
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-between;
+}
+.grey-child {
+  width: 24%;
+  background-color: lightgray;
+}
+@media only screen and (max-width: 768px) {
+  .orange {
+    flex-direction: column;
+    height: 20%;
+  }
+  .orange-child {
+    width: 100%;
+    height: 48%;
+  }
+  .blue {
+    height: 30%;
+    flex-direction: column;
+  }
+  .blue-child {
+    width: 100%;
+    height: 32%;
+  }
+  .green {
+    height: 30%;
+  }
+  .grey {
+    flex-wrap: wrap;
+    height: 15%;
+  }
+  .grey-child {
+    width: 49.5%;
+    margin: 0.25%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .orange {
+    flex-direction: column;
+    height: 15%;
+  }
+  .orange-child {
+    width: 100%;
+    height: 48%;
+  }
+  .green {
+    height: 20%;
+  }
+  .blue {
+    height: 35%;
+    flex-direction: column;
+  }
+  .blue-child {
+    width: 100%;
+    height: 32%;
+  }
+  .grey {
+    flex-direction: column;
+    height: 25%;
+  }
+  .grey-child {
+    width: 100%;
+    height: 23%;
+  }
+}

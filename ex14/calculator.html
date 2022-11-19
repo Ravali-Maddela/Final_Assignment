@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <style>
+      form {
+        width: 200px;
+        padding: 10px;
+        background-color: rgb(161, 164, 164);
+      }
+      .flex {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 0;
+      }
+      input[type="button"] {
+        width: 40px;
+        padding: 5px;
+      }
+      input[type="text"] {
+        padding: 10px 19px;
+        margin: 10px 0;
+        background-color: rgb(62, 62, 62);
+        color: white;
+        border-radius: 2px;
+        border: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div >
+      <form name="form">
+        <input type="text" name="calcValue" id="calcValue" />
+        <br />
+        <div class="flex">
+          <input type="button" value="7" onclick="calc(event)" />
+          <input type="button" value="8" onclick="calc(event)" />
+          <input type="button" value="9" onclick="calc(event)" />
+          <input type="button" value="+" onclick="calc(event)" />
+        </div>
+        <div class="flex">
+          <input type="button" value="4" onclick="calc(event)" />
+          <input type="button" value="5" onclick="calc(event)" />
+          <input type="button" value="6" onclick="calc(event)" />
+          <input type="button" value="-" onclick="calc(event)" />
+        </div>
+        <div class="flex">
+          <input type="button" value="1" onclick="calc(event)" />
+          <input type="button" value="2" onclick="calc(event)" />
+          <input type="button" value="3" onclick="calc(event)" />
+          <input type="button" value="*" onclick="calc(event)" />
+        </div>
+        <div class="flex">
+          <input type="button" value="0" onclick="calc(event)" />
+          <input type="button" value="/" onclick="calc(event)" />
+          <input type="button" value="C" onclick="form.calcValue.value='' " />
+          <input
+            type="button"
+            value="="
+            onclick="equal()"
+          />
+        </div>
+      </form>
+    </div>
+    <script>
+        function calc(e){
+            document.getElementById('calcValue').value+=e.target.value;
+        }
+        function equal() {
+            document.getElementById('calcValue').value=eval(document.getElementById('calcValue').value)
+        }
+    </script>
+  </body>
+</html>

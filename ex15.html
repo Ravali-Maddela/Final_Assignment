@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style id="style">
+      .editor-container,
+      .container {
+        display: flex;
+      }
+      .editor {
+        border: solid 1px #ccc;
+        padding: 20px;
+        min-height: 300px;
+        width: 350px;
+      }
+
+      .sample-toolbar {
+        border: solid 1px #ddd;
+        background: #f4f4f4;
+        padding: 5px;
+        border-radius: 3px;
+        width: fit-content;
+      }
+      input[type='button']{
+        padding: 10px 20px;
+        border: .1px solid lightgray;
+        border-radius: 5px;
+      }
+      .run {
+        background-color: green;
+        color: white;
+        margin: 10px;
+      }
+      #output{
+        text-align: center;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="sample-toolbar">
+        <input type="button" value="HTML" />
+        <div class="editor-container">
+          <textarea class="editor" id="html"></textarea>
+        </div>
+      </div>
+      <div class="sample-toolbar">
+        <input type="button" value="CSS" />
+        <div class="editor-container">
+          <textarea class="editor" id="css"></textarea>
+        </div>
+      </div>
+      <div class="sample-toolbar">
+        <input type="button" value="JS" />
+        <!-- <input type="button" value="RUN" onclick="outputFn()"> -->
+        <div class="editor-container">
+          <textarea class="editor" id="js"></textarea>
+        </div>
+      </div>
+    </div>
+    <input type="button" value="RUN" onclick="outputFn()" class="run" />
+    <div id="output"></div>
+
+    <script id="script">
+      function outputFn() {
+        let html = document.getElementById("html").value;
+        let css = document.getElementById("css").value;
+        let js = document.getElementById("js").value;
+        console.log(css);
+        document.getElementById("output").innerHTML = html;
+        document.getElementById("style").innerHTML += css;
+
+        const F = new Function(`${js}`);
+        F();
+      }
+    </script>
+  </body>
+</html>

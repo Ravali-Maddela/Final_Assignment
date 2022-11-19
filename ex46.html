@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      
+      #div1,
+      #div2 {
+        float: left;
+        width: 300px;
+        height: 300px;
+        margin: 2rem;
+        padding: 2rem;
+        border: 1px solid black;
+      }
+      h2,p{
+        margin: 1rem 2rem;
+      }
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+   
+        <h2>Drag and Drop</h2>
+        <p>Drag the cat back and forth between the two div elements.</p>
+    
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <img
+            src="https://th.bing.com/th/id/OIP.3OMv1XTcXhdufqZn5eVDWQHaHa?w=175&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+            draggable="true"
+            ondragstart="drag(event)"
+            id="dragimg"
+            width="88"
+            height="31"
+          />
+        </div>
+    
+        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+   
+    <script>
+      function allowDrop(e) {
+        e.preventDefault();
+      }
+
+      function drag(e) {
+        e.dataTransfer.setData("image", e.target.id);
+      }
+
+      function drop(e) {
+        e.preventDefault();
+        var data = e.dataTransfer.getData("image");
+        e.target.appendChild(document.getElementById(data));
+      }
+    </script>
+  </body>
+</html>

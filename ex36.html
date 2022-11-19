@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Booking Details</title>
+
+    <style>
+      div#maincontent {
+        height: fit-content;
+        width: 500px;
+        border: 1px solid #cee2fa;
+        text-align: left;
+        color: #08438e;
+        font-family: calibri;
+        font-size: 20;
+        padding: 10px;
+        margin-left: 10px;
+      }
+      div#heading {
+        text-decoration: bold;
+        text-align: center;
+        margin-top: 40px;
+        margin-left: 10px;
+        width: 500px;
+        border: 1px solid #cee2fa;
+        text-align: center;
+        color: #08438e;
+        background-color: #cee2fa;
+        font-family: calibri;
+        font-size: 20;
+        padding: 5px;
+      }
+      h2 {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="heading">
+      <h2>Booking Summary</h2>
+    </div>
+
+    <div id="maincontent">
+      <script>
+        //Write the code to display the discounted price on click of the text
+        let seats = 4;
+        let costPerTicket =0;
+        let discountPercent =0;
+        let content = "";
+       
+        function calculateCost(seats) {
+          if (seats <= 2) return (costPerTicket = 9);
+          else if (seats > 2 && seats <= 5) return (costPerTicket = 15);
+          else if (seats >= 6)
+            return 0
+        }
+
+        function calculateDiscount(seats) {
+          if (seats <= 2) discountPercent = 5;
+          else if (seats === 3) discountPercent = 7;
+          else if (seats === 4) discountPercent = 9;
+          else if (seats === 5) discountPercent = 11;
+          return discountPercent;
+        }
+        let price=0;
+        price = calculateCost(seats);
+        let totalCost = price * seats;
+        content += `
+        <p>Seats : ${seats}</p>
+        <p>Cost Per ticket is: $${price}</p>
+          <p id='total-cost'>Total Cost: $${totalCost}</p>`;
+        if (seats > 2 && seats <= 5) {
+          content += `<p>Congratulations! ${seats} seats are eligible for ${calculateDiscount(
+            seats
+          )}% discount. <a href='#' onclick="discountFn();">Apply</a></p> `;
+        }
+        if(seats>=6) {
+          content+=`Sorry Booking is not allowed for ${seats} number of seats. Try reducing the seats. `
+          document.getElementById("maincontent").innerHTML = content;
+        }
+
+        function discountFn() {
+          let discount = calculateDiscount(seats) / 100;
+          let finalPriceAfterDiscount = totalCost - totalCost * discount;
+          content += `<p>Total cost with discount is:  $${finalPriceAfterDiscount} </p>`;
+          document.getElementById("maincontent").innerHTML = content;
+        }
+
+        document.getElementById("maincontent").innerHTML = content;
+      </script>
+    </div>
+  </body>
+</html>

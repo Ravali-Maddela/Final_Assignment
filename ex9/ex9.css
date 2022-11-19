@@ -1,0 +1,48 @@
+.container {
+  width: 800px;
+  text-align: center;
+  margin: 3rem auto;
+}
+h5 {
+  text-transform: uppercase;
+  color: darkcyan;
+  font-size: small;
+}
+.container p {
+  color: gray;
+}
+.cards {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.card {
+  background-color: brown;
+  width: 31.5%;
+  height: 300px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+}
+.content {
+  background-color: white;
+  width: 80%;
+  position: absolute;
+}
+.content h4 {
+  padding: 0;
+  margin: 10px 10px 0px;
+}
+.content p {
+  margin: 2px 0 10px;
+  color: gray;
+}
+.content p {
+  font-size: small;
+  text-align: center;
+}
