@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        margin: 5rem;
+      }
+      .popup ol li {
+        background-color: rgb(129, 189, 168);
+        padding: 15px;
+        margin: 5px;
+      }
+      .options {
+        border: 1px solid black;
+        padding: 8px;
+        margin: 10px 0;
+      }
+      .btn-next {
+        float: right;
+        margin: 10px;
+        background-color: black;
+        color: white;
+        padding: 10px 20px;
+      }
+      .btn-submit {
+        background-color: black;
+        color: white;
+      }
+      hr {
+        margin-top: 3rem;
+      }
+      .popup ol .incrct {
+        background-color: red;
+        padding: 15px;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Quiz related to "React"</h2>
+      <p>Quiz | 7 questions</p>
+      <p>
+        This quiz on "React" will test your
+        knowledge based on the discussion that we had in this section
+      </p>
+      <button onclick="quiz(1)">Start quiz</button>
+      <button>Skip quiz</button>
+    </div>
+
+    <div class="container" id="container"></div>
+    <div class="popup container" id="result">
+    </div>
+    <script src="quiz.js"></script>
+  </body>
+</html>
