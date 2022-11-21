@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .container {
+        width: 1000px;
+        margin: auto;
+      }
+      .form-group {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px;
+      }
+    
+      .row {
+        width: 100%;
+        display: flex;
+      }
+      .col-left {
+        width: 60%;
+      }
+      .col-left input {
+        width: 60%;
+        padding: 5px;
+      }
+      .col-right {
+        padding: 10px;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+      }
+      .col-right button {
+        margin: 10px;
+        padding: 6px;
+      }
+      table,th,td{
+        border: 1px solid black;
+      }
+      table{
+        border-collapse: collapse;
+        margin: 2rem;
+      }
+      th, td{
+        padding: 10px 20px;
+      }
+      #buttons{
+        width: 20%;
+        padding: 5px;
+        margin: 5px;
+      }
+      .buttons{
+        width: 100%;
+      }
+      button{
+        background-color: beige;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="">
+        <fieldset>
+          <legend>Employee's Information System</legend>
+          <div class="row">
+            <div class="col-left">
+              <div class="form-group">
+                <label for="empId">Employee Id</label>
+                <input type="text" id="empId" />
+              </div>
+              <div class="form-group">
+                <label for="name">Employee Name</label>
+                <input type="text" id="name" />
+              </div>
+              <div class="form-group">
+                <label for="address">City Address</label>
+                <input type="text" id="address" />
+              </div>
+              <div class="form-group">
+                <label for="dob">Date Of Birth</label>
+                <input type="date" name="" id="dob" />
+              </div>
+              <div class="form-group">
+                <label for="tnum">Telephone Number</label>
+                <input type="text" name="" id="tnum" />
+              </div>
+              <div class="form-group">
+                <label for="dept">Department</label>
+                <input type="text" name="" id="dept" />
+              </div>
+            </div>
+            <div class="col-right">
+              <button onclick="addEmp(event)">Add</button>
+              <button onclick="updateEmp(event)">Update</button>
+              <button onclick="deleteFn(event)">Delete</button>
+              <button>Search</button>
+            </div>
+          </div>
+          <div class="buttons">
+            <button onclick="moveFirst(event)" id="buttons">Move First</button>
+            <button onclick="moveLast(event)" id="buttons">Move last</button>
+            <button onclick="movePrevious(event)" id="buttons">Move Previous</button>
+            <button onclick="moveNext(event)" id="buttons">Move Next</button>
+          </div>
+          <div>
+            <table class="table table-bordered">
+             <thead>
+              <th>Id</th>
+              <th>Name</th>
+              <th>City</th>
+              <th>Telephone Number</th>
+              <th>Date of Birth</th>
+              <th>Department</th>
+             </thead>
+             <tbody id="tbody">
+
+             </tbody>
+            </table>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+    <script src="./empInfoSys.js"></script>
+  </body>
+</html>
