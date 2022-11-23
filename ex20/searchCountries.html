@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        form{
+            width: 700px;
+        }
+      select {
+        width: 50%;
+        padding: 5px;
+      }
+      .select{
+        margin: 1rem;
+        
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div class="select">
+        <label for="">Countries: </label>
+        <select name="" id="countries" onchange="fn(event)"></select>
+      </div>
+
+      <div class="select">
+        <label for=""> States</label>
+        <select name="" id="states"></select>
+      </div>
+      <div class="select">
+        <label for=""> Cities</label>
+        <select name="" id="cities"></select>
+      </div>
+    </form>
+    <script src="searchCountries.js"></script>
+  </body>
+</html>
